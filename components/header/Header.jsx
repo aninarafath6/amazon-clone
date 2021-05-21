@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import style from './header.style'
-import { SearchIcon, ShoppingCartIcon } from "@heroicons/react/outline";
+import style from "./header.style";
+import { MenuIcon, SearchIcon, ShoppingCartIcon } from "@heroicons/react/outline";
 
 function Header() {
   return (
@@ -36,18 +36,28 @@ function Header() {
           </div>
           <div className={style.basketContainer}>
             <ShoppingCartIcon className={style.basketIcon} />
-            <span className={style.basketCount}>
-              0
-            </span>
-            <p className={style.basketText}>
-              Basket
-            </p>
+            <span className={style.basketCount}>0</span>
+            <p className={style.basketText}>Basket</p>
           </div>
         </div>
       </div>
 
       {/* bottom nav */}
-      <div></div>
+      <div className="flex items-center bg-amazon_blue-light text-white text-sm space-x-3 p-2 pl-6">
+        <p className="link flex items-center">
+          <MenuIcon className="h-6 mr-1" />
+          All
+        </p>
+        <p className="link">Prime video</p>
+        <p className="link">Amazon Business</p>
+        <p className="link">Today's Deals</p>
+        <p className="link hidden lg:inline-flex">Electronics's Deals</p>
+        <p className="link hidden lg:inline-flex">Food & Grocery</p>
+        <p className="link hidden lg:inline-flex">Prime</p>
+        <p className="link hidden lg:inline-flex">Buy Again</p>
+        <p className="link hidden lg:inline-flex">Shopper Toolkit</p>
+        <p className="link hidden lg:inline-flex">Health & Personal Care</p>
+      </div>
     </header>
   );
 }
