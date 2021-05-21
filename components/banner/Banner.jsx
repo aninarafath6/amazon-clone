@@ -1,10 +1,11 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import style from "./banner.style";
 
 function Banner() {
   return (
-      <div className="relative">
-          <div className="absolute w-full h-32 bg-gradient-to-t from-gray-100 to-transparent bottom-0 z-20"/>
+    <div className={style.banner}>
+      <div className={style.fade} />
       <Carousel
         autoPlay
         infiniteLoop
@@ -56,10 +57,18 @@ function Banner() {
           />
         </div>
         <div className="">
-          <img src="/images/bannerImage7.jpg" alt="bannerImage" loading="lazy" />
+          <img
+            src="/images/bannerImage7.jpg"
+            alt="bannerImage"
+            loading="lazy"
+          />
         </div>
         <div className="">
-          <img src="/images/bannerImage8.jpg" alt="bannerImage" loading="lazy" />
+          <img
+            src="/images/bannerImage8.jpg"
+            alt="bannerImage"
+            loading="lazy"
+          />
         </div>
       </Carousel>
     </div>

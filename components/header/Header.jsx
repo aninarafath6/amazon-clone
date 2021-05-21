@@ -9,7 +9,7 @@ import {
 
 function Header() {
   return (
-    <header>
+    <header className="select-none">
       {/* top nav */}
       <div className={style.header}>
         <div className={style.logoContainer}>
