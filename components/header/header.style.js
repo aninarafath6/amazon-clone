@@ -16,4 +16,9 @@ export default {
   basketCount:
     "absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold",
   basketText: "hidden md:inline font-extrabold md:text-sm mt-2",
+  bottomNavBAr:
+    "flex items-center bg-amazon_blue-light text-white text-sm space-x-3 p-2 pl-6",
+  menuIcon: "link flex  fex-row items-center",
+  link: "link",
+  lgLinks: "link hidden lg:inline-flex",
 };

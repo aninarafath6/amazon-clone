@@ -1,7 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import style from "./header.style";
-import { MenuIcon, SearchIcon, ShoppingCartIcon } from "@heroicons/react/outline";
+import {
+  MenuIcon,
+  SearchIcon,
+  ShoppingCartIcon,
+} from "@heroicons/react/outline";
 
 function Header() {
   return (
@@ -43,20 +47,20 @@ function Header() {
       </div>
 
       {/* bottom nav */}
-      <div className="flex items-center bg-amazon_blue-light text-white text-sm space-x-3 p-2 pl-6">
-        <p className="link flex items-center">
-          <MenuIcon className="h-6 mr-1" />
+      <div className={style.bottomNavBAr}>
+        <p className="link flex  fex-row items-center">
+          <MenuIcon className="h-6 mr-1 flex" />
           All
         </p>
-        <p className="link">Prime video</p>
-        <p className="link">Amazon Business</p>
-        <p className="link">Today's Deals</p>
-        <p className="link hidden lg:inline-flex">Electronics's Deals</p>
-        <p className="link hidden lg:inline-flex">Food & Grocery</p>
-        <p className="link hidden lg:inline-flex">Prime</p>
-        <p className="link hidden lg:inline-flex">Buy Again</p>
-        <p className="link hidden lg:inline-flex">Shopper Toolkit</p>
-        <p className="link hidden lg:inline-flex">Health & Personal Care</p>
+        <p className={style.link}>Prime video</p>
+        <p className={style.link}>Amazon Business</p>
+        <p className={style.link}>Today's Deals</p>
+        <p className={style.lgLinks}>Electronics's Deals</p>
+        <p className={style.lgLinks}>Food & Grocery</p>
+        <p className={style.lgLinks}>Prime</p>
+        <p className={style.lgLinks}>Buy Again</p>
+        <p className={style.lgLinks}>Shopper Toolkit</p>
+        <p className={style.lgLinks}>Health & Personal Care</p>
       </div>
     </header>
   );

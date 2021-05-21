@@ -1,9 +1,10 @@
 import Head from "next/head";
+import Banner from "../components/banner/Banner";
 import Header from "../components/header/Header";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="bg-gray-100 h-screen">
       <Head>
         <title>Amazon Clone</title>
         <meta
@@ -15,6 +16,11 @@ export default function Home() {
 
       {/* HEADER COMPONENT  */}
       <Header />
+
+      <main className=" mx-auto">
+        {/* BANNER */}
+        <Banner />
+      </main>
     </div>
   );
 }
