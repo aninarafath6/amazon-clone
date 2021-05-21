@@ -1,15 +1,20 @@
-import Head from 'next/head'
+import Head from "next/head";
+import Header from "../components/Header";
 
 export default function Home() {
   return (
-    <div className=''>
+    <div className="">
       <Head>
         <title>Amazon Clone</title>
-        <meta name="description" content="amazon cloned using next js and tailwind css " />
+        <meta
+          name="description"
+          content="amazon cloned using next js and tailwind css "
+        />
         <link rel="icon" href="/logo.png" />
       </Head>
 
-    
+      {/* HEADER COMPONENT  */}
+      <Header />
     </div>
-  )
+  );
 }
