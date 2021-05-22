@@ -11,7 +11,7 @@ function Product({ title, id, price, image, description, category }) {
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING) + MIN_RATING)
   );
   return (
-    <div className="relative flex flex-col m-5 bg-white p-10 z-30">
+    <div className="relative flex flex-col m-5 bg-white p-5 sm:p-10 z-30">
       <p className="absolute top-2 right-2 text-xs text-gray-400 italic">{category}</p>
       <Image src={image} width={200} height={200} objectFit="contain" />
       <h4 className="my-3">{title}</h4>

@@ -15,7 +15,7 @@ function Header() {
         <div className={style.logoContainer}>
           <Image
             src="/logo2.png"
-            width={150}
+            width={150}z
             height={40}
             objectFit="contain"
             className={style.logo}
