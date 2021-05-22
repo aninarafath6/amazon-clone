@@ -1,33 +1,25 @@
 import style from "./banner.style";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useMediaQuery } from "react-responsive";
 
-
 function Banner() {
-    const isBigScreen = useMediaQuery({
-      query: "(min-width: 1024px)",
-    });
+  const isBigScreen = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
   const settings = {
-    dots: true ,
+    dots: true,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    
   };
   return (
     <div className={style.banner}>
       {isBigScreen && <div className={style.fade} />}
-      <Carousel
-        autoPlay
-        infiniteLoop
-        showStatus={false}
-        showIndicators={true}
-        showThumbs={false}
-        interval={5000}
-      >
+      <Slider autoplay {...settings} className="overflow-hidden">
         <div className="">
           <img
             src="/images/bannerImage1.jpg"
@@ -91,7 +83,7 @@ function Banner() {
             loading="lazy"
           />
         </div>
-      </Carousel>
+      </Slider>
     </div>
   );
 }
