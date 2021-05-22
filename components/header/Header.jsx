@@ -5,6 +5,7 @@ import {
   MenuIcon,
   SearchIcon,
   ShoppingCartIcon,
+  LocationMarkerIcon
 } from "@heroicons/react/outline";
 
 function Header() {
@@ -23,10 +24,22 @@ function Header() {
             alt="amazon logo"
           />
         </div>
-
+        <div className={style.rightSectionContainer}>
+          <div className={`${style.rightLink} flex items-center space-x-1`}>
+            <LocationMarkerIcon className="h-6" />
+            <div>
+              <p className="">Hello</p>
+              <p className={style.rightContent}>Select your address</p>
+            </div>
+          </div>
+        </div>
         {/* search bar component */}
         <div className={style.searchContainer}>
-          <select name="" id="" className="outline-none text-gray-700 h-full rounded-l-md text-sm p-2" >
+          <select
+            name=""
+            id=""
+            className="outline-none text-gray-700 h-full rounded-l-md text-sm p-2"
+          >
             <option value="">All</option>
           </select>
           <input type="text" className={style.searchInput} />
@@ -35,7 +48,10 @@ function Header() {
         {/* Right section on nav */}
         <div className={style.rightSectionContainer}>
           <div className={style.rightLink}>
-            <p className="">Hello Anin Arafath</p>
+           <img src="/ind_flag.png" alt="" className='h-6' />
+          </div>
+          <div className={style.rightLink}>
+            <p className="">Hello, Anin Arafath</p>
             <p className={style.rightContent}>Account & List</p>
           </div>
           <div className={style.rightLink}>

@@ -9,7 +9,7 @@ export default {
   rightSectionContainer:
     "text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap",
   rightContent: "font-extrabold md:text-sm",
-  rightLink: "style.rightContent",
+  rightLink: "link",
   basketContainer: "link flex items-center relative",
   basketIcon: "h-10",
   basketCount:
