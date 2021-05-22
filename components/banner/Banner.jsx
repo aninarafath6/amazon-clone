@@ -2,11 +2,15 @@ import Slider from "react-slick";
 import style from "./banner.style";
         import "slick-carousel/slick/slick.css";
         import "slick-carousel/slick/slick-theme.css";
+import { useMediaQuery } from "react-responsive";
 
 
 function Banner() {
+    const isBigScreen = useMediaQuery({
+      query: "(min-width: 1024px)",
+    });
   const settings = {
-    dots: false,
+    dots: true ,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
@@ -15,7 +19,7 @@ function Banner() {
   };
   return (
     <div className={style.banner}>
-      <div className={style.fade} />
+      {isBigScreen && <div className={style.fade} />}
       <Slider autoplay {...settings} className='overflow-hidden'>
         <div className="">
           <img

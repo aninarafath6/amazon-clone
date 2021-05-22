@@ -14,9 +14,9 @@ function Header() {
     query: "(min-width: 1024px)",
   });
   return (
-    <>
+    <header className="select-none">
       {isBigScreen ? (
-        <header className="select-none">
+        <>
           {/* top nav */}
           <div className={style.header}>
             <div className={style.logoContainer}>
@@ -93,9 +93,9 @@ function Header() {
               <img src="/nav_1.jpg" alt="" className="IMPmargin" />
             </div>
           </div>
-        </header>
+        </>
       ) : (
-        <header>
+        <>
           <div className="flex bg-amazon_blue p-2 flex-grow py-2 flex-col">
             {/* left section  */}
             <div className="mt-2 flex items-center flex-grow sm:flex-grow-0 h-full justify-between w-full py-1 ">
@@ -150,14 +150,14 @@ function Header() {
           <div className="overflow-hidden">
             <div className={style.bottomNavBAr}>
               <LocationMarkerIcon className="h-6" />
-              <div className='py-3'>
+              <div className="py-3">
                 <p className={style.rightContent}>Select your address</p>
               </div>
             </div>
           </div>{" "}
-        </header>
+        </>
       )}
-    </>
+    </header>
   );
 }
 
