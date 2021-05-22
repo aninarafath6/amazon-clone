@@ -15,7 +15,8 @@ function Header() {
         <div className={style.logoContainer}>
           <Image
             src="/logo2.png"
-            width={150}z
+            width={150}
+            z
             height={40}
             objectFit="contain"
             className={style.logo}
@@ -25,6 +26,9 @@ function Header() {
 
         {/* search bar component */}
         <div className={style.searchContainer}>
+          <select name="" id="" className="outline-none text-gray-700 h-full rounded-l-md text-sm p-2" >
+            <option value="">All</option>
+          </select>
           <input type="text" className={style.searchInput} />
           <SearchIcon className={style.searchIcon} />
         </div>
@@ -47,20 +51,24 @@ function Header() {
       </div>
 
       {/* bottom nav */}
-      <div className={style.bottomNavBAr}>
-        <p className="link flex  fex-row items-center">
-          <MenuIcon className="h-6 mr-1 flex" />
-          All
-        </p>
-        <p className={style.link}>Prime video</p>
-        <p className={style.link}>Amazon Business</p>
-        <p className={style.link}>Today's Deals</p>
-        <p className={style.lgLinks}>Electronics's Deals</p>
-        <p className={style.lgLinks}>Food & Grocery</p>
-        <p className={style.lgLinks}>Prime</p>
-        <p className={style.lgLinks}>Buy Again</p>
-        <p className={style.lgLinks}>Shopper Toolkit</p>
-        <p className={style.lgLinks}>Health & Personal Care</p>
+      <div className="">
+        <div className={style.bottomNavBAr}>
+          <p className="link flex  fex-row items-center">
+            <MenuIcon className="h-6 mr-1 flex" />
+            All
+          </p>
+          <p className={style.link}>Best Sellers</p>
+          <p className={style.link}>Mobiles</p>
+          <p className={style.link}>Prime</p>
+          <p className={style.lgLinks}>Fashion</p>
+          <p className={style.lgLinks}>New Releases</p>
+          <p className={style.lgLinks}>Electronics</p>
+          <p className={style.lgLinks}>Customer Service</p>
+          <p className={style.lgLinks}>Today's Deals</p>
+          <p className={style.lgLinks}>Amazon Pay</p>
+
+          <img src="/nav_1.jpg" alt="" className="IMPmargin" />
+        </div>
       </div>
     </header>
   );
