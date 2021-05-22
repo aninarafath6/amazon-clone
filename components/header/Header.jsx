@@ -5,7 +5,7 @@ import {
   MenuIcon,
   SearchIcon,
   ShoppingCartIcon,
-  LocationMarkerIcon
+  LocationMarkerIcon,
 } from "@heroicons/react/outline";
 import { useMediaQuery } from "react-responsive";
 
@@ -111,6 +111,7 @@ function Header() {
                   objectFit="contain"
                   className={style.logo}
                   alt="amazon logo"
+                  className="object-cover"
                 />
               </div>
 
@@ -133,6 +134,7 @@ function Header() {
               <div className="w-12/12 flex focus:ring-2 focus:ring-yellow-500 active:from-yellow-500 bg-yellow-400 hover:bg-yellow-500 items-center h-10 rounded-md flex-grow cursor-pointer">
                 <input
                   type="text"
+                  placeholder="Search Amazon.in"
                   className="p-2 h-full w flex-shrink flex-grow   focus:outline-none rounded-l-md"
                 />
                 <SearchIcon className={style.searchIcon} />
@@ -151,7 +153,9 @@ function Header() {
             <div className={style.bottomNavBAr}>
               <LocationMarkerIcon className="h-6" />
               <div className="py-3">
-                <p className={style.rightContent}>Select your address</p>
+                <p className={style.rightContent}>
+                  Select a location to see product availability
+                </p>
               </div>
             </div>
           </div>{" "}
