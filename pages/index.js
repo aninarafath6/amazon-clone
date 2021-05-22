@@ -3,8 +3,13 @@ import Banner from "../components/banner/Banner";
 import Header from "../components/header/Header";
 import ProductFeed from "../components/product feed/ProductFeed";
 import axios from "axios";
+import { useMediaQuery } from "react-responsive";
+import Category from "../components/category/Category";
 
 export default function Home({ products }) {
+  const isBigScreen = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
   return (
     <div className="bg-gray-100 select-none">
       <Head>
@@ -21,8 +26,8 @@ export default function Home({ products }) {
 
       <main className=" mx-auto">
         {/* BANNER */}
+{!isBigScreen && <Category />}
         <Banner />
-
         {/* PRODUCT FEED CONTAINER */}
         <ProductFeed products={products} />
       </main>

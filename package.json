@@ -22,7 +22,8 @@
     "react-responsive": "^8.2.0",
     "react-responsive-carousel": "^3.2.18",
     "react-slick": "^0.28.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "tailwind-scrollbar-hide": "^1.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^9",
