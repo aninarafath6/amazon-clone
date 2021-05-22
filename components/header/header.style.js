@@ -1,5 +1,5 @@
 export default {
-  header: "flex items-center bg-amazon_blue p-1 flex-grow py-2 sticky",
+  header: "flex items-center bg-amazon_blue p-1 flex-grow py-2 ",
   logoContainer: "mt-2 flex items-center flex-grow sm:flex-grow-0",
   logo: "cursor-pointer",
   searchContainer:
@@ -19,5 +19,5 @@ export default {
     "flex items-center bg-amazon_blue-light text-white text-sm whitespace-nowrap space-x-4  pl-6",
   menuIcon: "link flex  fex-row items-center",
   link: "link",
-  lgLinks: "link hidden lg:inline-flex",
+  lgLinks: "link hidden xl:inline-flex",
 };
