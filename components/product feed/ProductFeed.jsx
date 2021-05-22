@@ -3,7 +3,7 @@ import Product from "../product/Product";
 
 function ProductFeed({ products }) {
   return (
-    <div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-52">
+    <div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 -mt-28 sm:-mt-40 lg:-mt-80">
       {products.slice(0, 4).map((product, i) => {
         return <Product {...product} key={i} />;
       })}

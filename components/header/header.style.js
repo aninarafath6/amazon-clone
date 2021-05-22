@@ -1,5 +1,5 @@
 export default {
-  header: "flex items-center bg-amazon_blue p-1 flex-grow py-2",
+  header: "flex items-center bg-amazon_blue p-1 flex-grow py-2 sticky",
   logoContainer: "mt-2 flex items-center flex-grow sm:flex-grow-0",
   logo: "cursor-pointer",
   searchContainer:

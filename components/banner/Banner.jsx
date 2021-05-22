@@ -1,19 +1,22 @@
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import Slider from "react-slick";
 import style from "./banner.style";
+        import "slick-carousel/slick/slick.css";
+        import "slick-carousel/slick/slick-theme.css";
+
 
 function Banner() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    
+  };
   return (
     <div className={style.banner}>
       <div className={style.fade} />
-      <Carousel
-        autoPlay
-        infiniteLoop
-        showStatus={false}
-        showIndicators={false}
-        showThumbs={false}
-        interval={5000}
-      >
+      <Slider autoplay {...settings} className='overflow-hidden'>
         <div className="">
           <img
             src="/images/bannerImage1.jpg"
@@ -77,7 +80,7 @@ function Banner() {
             loading="lazy"
           />
         </div>
-      </Carousel>
+      </Slider>
     </div>
   );
 }

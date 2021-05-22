@@ -25,7 +25,7 @@ function Header() {
           />
         </div>
         <div className={style.rightSectionContainer}>
-          <div className={`${style.rightLink} flex items-center space-x-1`}>
+          <div className={`${style.rightLink} flex items-center  space-x-1`}>
             <LocationMarkerIcon className="h-6" />
             <div>
               <p className="">Hello</p>
