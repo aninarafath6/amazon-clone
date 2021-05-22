@@ -57,7 +57,7 @@ function Footer() {
         </div>
         <div
                   className="
-          flex  space-x-5 text-white items-center justify-center
+          flex  space-x-5 text-white items-center justify-center text-xs my-5
        "
         >
           <p className="">Australia</p>
