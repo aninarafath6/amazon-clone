@@ -150,7 +150,7 @@ function Header() {
           <div className="overflow-hidden">
             <div className={style.bottomNavBAr}>
               <LocationMarkerIcon className="h-6" />
-              <div className='py-2'>
+              <div className='py-3'>
                 <p className={style.rightContent}>Select your address</p>
               </div>
             </div>
