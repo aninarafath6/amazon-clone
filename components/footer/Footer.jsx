@@ -56,7 +56,7 @@ function Footer() {
           </div>
         </div>
       ) : (
-        <div className="text-white py-5 px-1 flex  space-x-10 xl:space-x-24 mx-auto justify-center">
+        <div className="text-white py-5 px-1 flex  space-x-10 xl:space-x-24 mx-auto justify-evenly">
           <div className="">
             <div className=" text-sm space-y-2">
               <p className="link">An's Amazon.in</p>

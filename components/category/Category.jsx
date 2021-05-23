@@ -48,7 +48,7 @@ function Category() {
     },
   ];
   return (
-    <section className="bg-white flex space-x-11 mb-3 pl-2 p-2 overflow-hidden overflow-x-scroll scrollbar-hide">
+    <section className="bg-white flex space-x-11 mb-3 pl-2 p-2 overflow-hidden overflow-x-scroll scrollbar-hide mt-2">
       {category.map((cate) => (
         <div className="flex flex-col  items-center space-y-1 text-gray-700">
           <img src={cate.url} alt="" className="h-16 w-16 " />

@@ -9,12 +9,18 @@ import {
 } from "@heroicons/react/outline";
 import { useMediaQuery } from "react-responsive";
 import { signIn, signOut, useSession } from "next-auth/client";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import { selectItems } from "../../slices/basketSlice";
 
 function Header() {
+  const items = useSelector(selectItems)
+
   const isBigScreen = useMediaQuery({
     query: "(min-width: 1024px)",
   });
   const [session] = useSession();
+  const router = useRouter();
   return (
     <header className="select-none">
       {isBigScreen ? (
@@ -23,6 +29,9 @@ function Header() {
           <div className={style.header}>
             <div className={style.logoContainer}>
               <Image
+                onClick={() => {
+                  router.push(" /");
+                }}
                 src="/logo2.png"
                 width={150}
                 height={40}
@@ -73,8 +82,13 @@ function Header() {
                 <p className={style.rightContent}>& Orders</p>
               </div>
               <div className={style.basketContainer}>
-                <ShoppingCartIcon className={style.basketIcon} />
-                <span className={style.basketCount}>0</span>
+                <ShoppingCartIcon
+                  onClick={() => {
+                    router.push(" /checkout");
+                  }}
+                  className={style.basketIcon}
+                />
+                <span className={style.basketCount}>{items.length}</span>
                 <p className={style.basketText}>Basket</p>
               </div>
             </div>
@@ -113,26 +127,33 @@ function Header() {
                 <Image
                   src="/logo2.png"
                   width={110}
-                  z
+                  onClick={() => {
+                    router.push(" /");
+                  }}
                   height={25}
                   objectFit="contain"
                   className={style.logo}
                   alt="amazon logo"
-                  className="object-cover"
+                  className="object-cover  cursor-pointer"
                 />
               </div>
 
               {/* right section  */}
               <div>
-                <div className="text-white flex items-center text-xs space-x-6 mx-6  mb-2">
-                  <div className="link flex items-center relative">
+                <div className="text-white flex items-center text-xs space-x-6 mx-6  ">
+                  <div className=" cursor-pointer flex items-center relative">
                     <div className="link" onClick={!session ? signIn : signOut}>
                       <p className="">
                         {session ? `Hello, ${session.user.name}` : "Sign In"}
                       </p>
                     </div>
-                    <ShoppingCartIcon className="h-8" />
-                    <span className={style.basketCount}>0</span>
+                    <ShoppingCartIcon
+                      onClick={() => {
+                        router.push(" /checkout");
+                      }}
+                      className="h-8 ml-2"
+                    />
+                    <span className={style.basketCount}>{items.length}</span>
                     <p className={style.basketText}>Basket</p>
                   </div>
                 </div>

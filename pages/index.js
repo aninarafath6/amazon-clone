@@ -7,8 +7,6 @@ import { useMediaQuery } from "react-responsive";
 import Category from "../components/category/Category";
 import Footer from "../components/footer/Footer";
 
-
-
 export default function Home({ products }) {
   const isBigScreen = useMediaQuery({
     query: "(min-width: 1024px)",
@@ -24,17 +22,12 @@ export default function Home({ products }) {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      {/* HEADER COMPONENT  */}
-      <Header />
-
       <main className=" mx-auto">
         {/* BANNER */}
         {!isBigScreen && <Category />}
         <Banner />
         {/* PRODUCT FEED CONTAINER */}
         <ProductFeed products={products} />
-        {/* FOOTER  SECTION */}
-        <Footer />
       </main>
     </div>
   );
@@ -52,7 +45,7 @@ export async function getServerSideProps(context) {
   }
   return {
     props: {
-      products: null
+      products: null,
     },
   };
 }
