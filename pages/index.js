@@ -31,7 +31,7 @@ export default function Home({ products }) {
         <Banner />
         {/* PRODUCT FEED CONTAINER */}
         <ProductFeed products={products} />
-
+        {/* FOOTER  SECTION */}
         <Footer />
       </main>
     </div>
@@ -40,9 +40,17 @@ export default function Home({ products }) {
 
 export async function getServerSideProps(context) {
   const products = await axios.get("https://fakestoreapi.com/products");
+
+  if (products.data) {
+    return {
+      props: {
+        products: products.data,
+      },
+    };
+  }
   return {
     props: {
-      products: products.data,
+      products: null
     },
   };
 }
