@@ -99,18 +99,18 @@ function Footer() {
           <p>France </p>
           <p>Germany</p>
           <p> Italy </p>
-          <p>Japan</p>
-          <p> Mexico</p>
-          <p> Netherlands </p>
-          <p>Poland </p>
-          <p>Singapore</p>
+          <p className="hidden sm:flex"> Mexico</p>
+          <p className="hidden sm:flex">Japan</p>
+          <p className="hidden sm:flex"> Netherlands </p>
+          <p className="hidden sm:flex">Poland </p>
+          {/* <p>Singapore</p>
           <p>Spain</p>
           <p>Turkey</p>
-          <p>United</p>
+          <p>United</p> */}
         </div>
       </div>
       <div className="bg-[#131A22] flex items-center justify-center">
-        <div className="text-gray-500 grid grid-cols-5 tex-ls gap-11 gap-y-6  p-3 ">
+        <div className="text-gray-500 grid grid-cols-5 tex-ls gap-11 gap-y-6  p-3 hidden lg:grid">
           <div className="mr-10">
             <h4 className="text-white font-bold">AbdBooks</h4>
             <p>
@@ -177,7 +177,7 @@ function Footer() {
       </div>
       <div className="bg-[#131A22] flex items-center justify-center  p-3 tex-ls space-x-5">
         <p className="link text-white">Conditions of Use & Sale</p>
-        <p className="link text-white">Privacy Nots</p>
+        <p className="link text-white hidden lg:flex">Privacy Nots</p>
         <p className="link text-white">Interest-Based Ads</p>
         <p className="link text-white">
           © 1996-2021, Amazon.com, Inc. or its affiliates
