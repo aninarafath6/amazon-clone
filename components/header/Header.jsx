@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import style from "./header.style";
 import {
@@ -8,11 +8,13 @@ import {
   LocationMarkerIcon,
 } from "@heroicons/react/outline";
 import { useMediaQuery } from "react-responsive";
+import { signIn, signOut, useSession } from "next-auth/client";
 
 function Header() {
   const isBigScreen = useMediaQuery({
     query: "(min-width: 1024px)",
   });
+  const [session] = useSession();
   return (
     <header className="select-none">
       {isBigScreen ? (
@@ -57,8 +59,13 @@ function Header() {
               <div className={style.rightLink}>
                 <img src="/ind_flag.png" alt="" className="h-6" />
               </div>
-              <div className={style.rightLink}>
-                <p className="">Hello, Anin Arafath</p>
+              <div
+                onClick={!session ? signIn : signOut}
+                className={style.rightLink}
+              >
+                <p className="">
+                  {session ? `Hello, ${session.user.name}` : "Sign In"}
+                </p>
                 <p className={style.rightContent}>Account & List</p>
               </div>
               <div className={style.rightLink}>
@@ -119,8 +126,10 @@ function Header() {
               <div>
                 <div className="text-white flex items-center text-xs space-x-6 mx-6  mb-2">
                   <div className="link flex items-center relative">
-                    <div className="link">
-                      <p className="mr-2">Hello, Anin</p>
+                    <div className="link" onClick={!session ? signIn : signOut}>
+                      <p className="">
+                        {session ? `Hello, ${session.user.name}` : "Sign In"}
+                      </p>
                     </div>
                     <ShoppingCartIcon className="h-8" />
                     <span className={style.basketCount}>0</span>

@@ -7,6 +7,8 @@ import { useMediaQuery } from "react-responsive";
 import Category from "../components/category/Category";
 import Footer from "../components/footer/Footer";
 
+
+
 export default function Home({ products }) {
   const isBigScreen = useMediaQuery({
     query: "(min-width: 1024px)",
