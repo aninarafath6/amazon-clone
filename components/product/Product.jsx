@@ -12,7 +12,7 @@ function Product({ title, id, price, image, description, category }) {
   const [rating] = useState(
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING) + MIN_RATING)
   );
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const addItemToCart = () => {
     const product = {
@@ -22,12 +22,17 @@ function Product({ title, id, price, image, description, category }) {
       image,
       description,
       category,
+      rating,
+      hasPrime,
+      quantity:1
     };
-    dispatch(addToBasket(product))
-  }
+    dispatch(addToBasket(product));
+  };
   return (
     <div className="relative flex flex-col m-5 bg-white p-5 sm:p-10 z-30">
-      <p className="absolute top-2 right-2 text-xs text-gray-400 italic">{category}</p>
+      <p className="absolute top-2 right-2 text-xs text-gray-400 italic">
+        {category}
+      </p>
       <Image src={image} width={200} height={200} objectFit="contain" />
       <h4 className="my-3">{title}</h4>
       <div className="flex">
@@ -43,12 +48,14 @@ function Product({ title, id, price, image, description, category }) {
       </div>
       {hasPrime && (
         <div className="flex items-center space-x-2 -mt-5">
-          <img className='w-12' src="/primeLogo.png" alt="" />
+          <img className="w-12" src="/primeLogo.png" alt="" />
           <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
         </div>
       )}
 
-      <button onClick={addItemToCart} className="mt-auto button">Add To Cart</button>
+      <button onClick={addItemToCart} className="mt-auto button">
+        Add To Cart
+      </button>
     </div>
   );
 }

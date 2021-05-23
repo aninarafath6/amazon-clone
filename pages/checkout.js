@@ -3,7 +3,7 @@ import Image from "next/image";
 import Head from "next/head";
 import { useSelector } from "react-redux";
 import { selectItems } from "../slices/basketSlice";
-import CheckoutProduct from "../checkout product/CheckoutProduct";
+import CheckoutProduct from "../components/checkout product/CheckoutProduct";
 
 function Checkout() {
   const items = useSelector(selectItems)
