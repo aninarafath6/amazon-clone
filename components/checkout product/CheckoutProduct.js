@@ -74,6 +74,7 @@ function CheckoutProduct({
         <button onClick={removeItemFromCart} className="button">
           Remove from Cart
         </button>
+        
       </div>
     </div>
   );
