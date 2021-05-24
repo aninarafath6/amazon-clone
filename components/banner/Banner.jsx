@@ -3,12 +3,10 @@ import { Carousel } from "react-responsive-carousel";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { useMediaQuery } from "react-responsive";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 function Banner() {
-  const isBigScreen = useMediaQuery({
-    query: "(min-width: 1024px)",
-  });
+  const isBigScreen = useMediaQuery("(min-width: 1024px)");
   const settings = {
     dots: true,
     infinite: true,
@@ -18,7 +16,8 @@ function Banner() {
   };
   return (
     <div className={style.banner}>
-      {isBigScreen && <div className={style.fade} />}
+      <div className="absolute w-full h-96 hidden lg:flex bg-gradient-to-t from-[#f3f4f6] to-transparent bottom-0  z-20" />
+
       <Slider autoplay {...settings} className="overflow-hidden">
         <div className="">
           <img
