@@ -23,7 +23,7 @@ export const basketSlice = createSlice({
         (item) => item.id === action.payload.id
       );
       if (index >= 0) {
-        if (items[index].quantity !== 1) {
+        if (state.items[index].quantity !== 1) {
           state.items[index].quantity = state.items[index].quantity - 1;
        }
       } else {

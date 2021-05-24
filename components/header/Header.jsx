@@ -119,7 +119,7 @@ function Header() {
           <div className="flex bg-amazon_blue p-2 flex-grow py-2 flex-col">
             {/* left section  */}
             <div className="mt-2 flex items-center flex-grow sm:flex-grow-0 h-full justify-between w-full py-1 ">
-              <div className="flex items-center justify-center ">
+              <div className="flex items-center justify-center p-2">
                 <div className="flex items-center h-ful mx-1 ">
                   <MenuIcon className=" mb-2 h-6  flex text-white my-auto" />
                 </div>
