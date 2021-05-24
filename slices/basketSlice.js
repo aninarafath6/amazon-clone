@@ -8,7 +8,7 @@ export const basketSlice = createSlice({
   name: "basket",
   initialState,
   reducers: {
-    addToBasket: (state, action) => {
+    increment: (state, action) => {
       const index = state.items.findIndex(
         (item) => item.id === action.payload.id
       );
@@ -16,6 +16,18 @@ export const basketSlice = createSlice({
         state.items[index].quantity = state.items[index].quantity + 1;
       } else {
         state.items = [...state.items, action.payload];
+      }
+    },
+    decrement: (state, action) => {
+      const index = state.items.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (index >= 0) {
+        if (items[index].quantity !== 1) {
+          state.items[index].quantity = state.items[index].quantity - 1;
+       }
+      } else {
+        console.log("item not found");
       }
     },
     removeFromBasket: (state, action) => {
@@ -36,7 +48,7 @@ export const basketSlice = createSlice({
   },
 });
 
-export const { addToBasket, removeFromBasket } = basketSlice.actions;
+export const { increment, removeFromBasket, decrement } = basketSlice.actions;
 
 // Selectors - This is how we pull information from the Global store slice
 export const selectItems = (state) => state.basket.items;

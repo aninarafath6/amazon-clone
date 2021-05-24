@@ -7,18 +7,17 @@ import {
   ShoppingCartIcon,
   LocationMarkerIcon,
 } from "@heroicons/react/outline";
-import { useMediaQuery } from "react-responsive";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { signIn, signOut, useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { selectItems } from "../../slices/basketSlice";
 
+
 function Header() {
   const items = useSelector(selectItems)
 
-  const isBigScreen = useMediaQuery({
-    query: "(min-width: 1024px)",
-  });
+  const isBigScreen = useMediaQuery("(min-width: 1024px)");
   const [session] = useSession();
   const router = useRouter();
   return (

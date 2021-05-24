@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/solid";
 import Currency from "react-currency-formatter";
-import { addToBasket } from "../../slices/basketSlice";
+import { increment } from "../../slices/basketSlice";
 import { useDispatch } from "react-redux";
 
 function Product({ title, id, price, image, description, category }) {
@@ -26,7 +26,7 @@ function Product({ title, id, price, image, description, category }) {
       hasPrime,
       quantity:1
     };
-    dispatch(addToBasket(product));
+    dispatch(increment(product));
   };
   return (
     <div className="relative flex flex-col m-5 bg-white p-5 sm:p-10 z-30">

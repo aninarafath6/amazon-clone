@@ -19,6 +19,10 @@ export default function Home({ products }) {
           name="description"
           content="amazon cloned using next js and tailwind css "
         />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
         <link rel="icon" href="/logo.png" />
       </Head>
 

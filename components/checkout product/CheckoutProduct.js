@@ -1,13 +1,20 @@
-import { StarIcon } from "@heroicons/react/solid";
+import {
+  PlusIcon,
+  MinusIcon,
+  PlusSmIcon,
+  MinusSmIcon,
+} from "@heroicons/react/solid";
 import Image from "next/image";
 import Currency from "react-currency-formatter";
 import { useDispatch } from "react-redux";
 import {
-  addToBasket,
+  increment,
+  decrement,
   selectItems,
   removeFromBasket,
 } from "../../slices/basketSlice";
 import { useSelector } from "react-redux";
+
 function CheckoutProduct({
   id,
   title,
@@ -23,50 +30,31 @@ function CheckoutProduct({
   console.log(id);
   const dispatch = useDispatch();
 
-  const addItemToCart = () => {
-    const product = {
-      id,
-      title,
-      price,
-      rating,
-      description,
-      category,
-      image,
-      hasPrime,
-    };
-    dispatch(addToBasket(product));
+  const incrementQuantity = () => {
+
+    dispatch(increment({id}));
   };
+  const decrementQuantity = () => {
+    dispatch(decrement({id}))
+  }
   const removeItemFromCart = () => {
     dispatch(removeFromBasket({ id }));
   };
-  const a = items.findIndex(item => item.id === id)
-  console.log(items[a].quantity);
+  const index = items.findIndex((item) => item.id === id);
   return (
-    <div className="grid grid-cols-5">
-      <Image src={image} height={200} width={200} objectFit="contain" />
+    <>
+      <div className="grid grid-cols-5">
+        <Image src={image} height={200} width={200} objectFit="contain" />
 
-      {/* middle */}
-      <div className="col-span-3 mx-5">
-        <p>{title}</p>
-        <div className="flex">
-          {Array(rating)
-            .fill()
-            .map((_, i) => (
-              <StarIcon className="h-6 text-yellow-500" />
-            ))}
-        </div>
-        <p className="text-xs my-2 line-clamp-3">{description}</p>
-        <p className="text-sm my-2 font-bold line-clamp-3">quantity : {items[a].quantity}</p>
-
-        <Currency quantity={price * 72} currency="INR" />
-        {hasPrime && (
-          <div className="flex items-center space-x-2 ">
-            <img loading="lazy" className="w-12" src="/primeLogo.png" alt="" />
-            <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
+        {/* middle */}
+        <div className="col-span-4 mx-5">
+          <p className="text-sm text-blue-400 font-bold">{title}</p>
+          <div className="font-bold my-2">
+            <Currency quantity={price * 72} currency="INR" />
           </div>
-        )}
-      </div>
-      <div className="flex flex-col space-y-2 my-auto justify-self-end">
+          <p className="text-sm  text-green-600">In Stoke</p>
+        </div>
+        {/* <div className="flex flex-col space-y-2 my-auto justify-self-end">
         <button onClick={addItemToCart} className="button">
           Add To Cart
         </button>
@@ -74,9 +62,38 @@ function CheckoutProduct({
         <button onClick={removeItemFromCart} className="button">
           Remove from Cart
         </button>
-        
+      </div> */}
       </div>
-    </div>
+      <div
+        className=" flex justify-evenly items-center
+      "
+      >
+        <div className="flex h-full items-center padding-2 rounded-l-sm  border border-gray-300  shadow-lg active:shadow-none w-24 justify-between">
+          <button
+            disabled={items[index].quantity === 1}
+            className=" bg-gray-100 border-r rounded-l-sm focus:outline-none active:bg-gray-300 h-full"
+          >
+            <MinusSmIcon className="h-6" />
+          </button>
+          <span className="my-auto ">{items[index].quantity}</span>
+          <button
+            onClick={incrementQuantity}
+            className=" bg-gray-100 border- rounded-l-sm focus:outline-none active:bg-gray-300 h-full"
+          >
+            <PlusSmIcon className="h-6" />
+          </button>
+        </div>
+        <button
+          onClick={decrementQuantity}
+          className="bg-white shadow-md rounded-md text-sm border focus:outline-none active:bg-gray-50 active:shadow-none border-gray-300 p-1 px-3"
+        >
+          Delete
+        </button>
+        <button className="bg-white shadow-md rounded-md text-sm border focus:outline-none active:bg-gray-50 active:shadow-none border-gray-300 p-1 px-3">
+          Save for later
+        </button>
+      </div>
+    </>
   );
 }
 
