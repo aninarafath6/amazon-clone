@@ -60,10 +60,10 @@ function CheckoutProduct({
           <p className="text-sm  text-green-600">In Stoke</p>
 
           <div
-            className=" flex justify-evenly items-center md:justify-start md:space-x-3 flex-wrap
+            className=" flex justify-start  items-center md:justify-start md:space-x-3 flex-wrap
       "
           >
-            <div className="flex h-full items-center padding-2 my-2 rounded-l-sm  border border-gray-300  shadow-lg active:shadow-none w-24 justify-between">
+            <div className="flex h-full mr-3  items-center padding-2 my-2 rounded-l-sm  border border-gray-300  shadow-lg active:shadow-none w-24 justify-between">
               <button
                 disabled={items[index].quantity === 1}
                 onClick={decrementQuantity}
