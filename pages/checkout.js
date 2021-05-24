@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import { useSelector } from "react-redux";
-import { selectItems } from "../slices/basketSlice";
+import { selectItems, selectTotal } from "../slices/basketSlice";
 import CheckoutProduct from "../components/checkout product/CheckoutProduct";
 import Currency from "react-currency-formatter";
 import { signIn, signOut, useSession } from "next-auth/client";
 
-
 function Checkout() {
   const items = useSelector(selectItems);
-  const total = items.reduce((total, item) => total + item.price * 72, 0);
+  const total = useSelector(selectTotal);
+
   const [session] = useSession();
 
   return (
