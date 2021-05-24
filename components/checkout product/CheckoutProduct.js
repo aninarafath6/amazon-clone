@@ -50,7 +50,7 @@ function CheckoutProduct({
         <div className="col-span-4 mx-5">
           <p className="text-sm text-blue-400 font-bold">{title}</p>
           <p className="text-sm my-2 text-gray-400">{category}</p>
-          <p className="text-sm my-2 text-gray-600 line-clamp-3">
+          <p className="text-sm max-w-2xl my-2 text-gray-600 line-clamp-3">
             {description}
           </p>
 

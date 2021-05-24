@@ -7,6 +7,7 @@ import CheckoutProduct from "../components/checkout product/CheckoutProduct";
 import Currency from "react-currency-formatter";
 import { signIn, signOut, useSession } from "next-auth/client";
 
+
 function Checkout() {
   const items = useSelector(selectItems);
   const total = items.reduce((total, item) => total + item.price * 72, 0);
