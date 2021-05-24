@@ -27,6 +27,7 @@ function Banner() {
           />
         </div>
         <div className="">
+          
           <img
             src="/images/bannerImage2.jpg"
             alt="bannerImage"
